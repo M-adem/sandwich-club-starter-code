@@ -23,29 +23,30 @@ import java.util.List;
 import java.util.ListIterator;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class DetailActivity extends AppCompatActivity {
 
     @BindView(R.id.also_known_tv)
-    private TextView textViewAlsoKnownAsTv;
+    TextView textViewAlsoKnownAsTv;
 
     @BindView(R.id.origin_tv)
-    private TextView textViewPlaceOfOriginTv;
+    TextView textViewPlaceOfOriginTv;
 
     @BindView(R.id.description_tv)
-    private TextView textViewDescriptionTv;
+    TextView textViewDescriptionTv;
 
     @BindView(R.id.ingredients_tv)
-    private TextView textViewIngredientsTv;
+    TextView textViewIngredientsTv;
 
     @BindView(R.id.also_known_tv_groupe)
-    private LinearLayout groupeAlsoKnowsTV;
+    LinearLayout groupeAlsoKnowsTV;
 
     @BindView(R.id.ingredients_groupe)
-    private LinearLayout groupeIngredientsTV;
+    LinearLayout groupeIngredientsTV;
 
     @BindView(R.id.origin_tv_groupe)
-    private LinearLayout groupeOriginTV;
+    LinearLayout groupeOriginTV;
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
@@ -55,6 +56,9 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        // bind the view using butterknife
+        ButterKnife.bind(this);
 
         ImageView ingredientsIv = findViewById(R.id.image_iv);
 
