@@ -22,17 +22,34 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
+import butterknife.BindView;
+
 public class DetailActivity extends AppCompatActivity {
+
+    @BindView(R.id.also_known_tv)
+    private TextView textViewAlsoKnownAsTv;
+
+    @BindView(R.id.origin_tv)
+    private TextView textViewPlaceOfOriginTv;
+
+    @BindView(R.id.description_tv)
+    private TextView textViewDescriptionTv;
+
+    @BindView(R.id.ingredients_tv)
+    private TextView textViewIngredientsTv;
+
+    @BindView(R.id.also_known_tv_groupe)
+    private LinearLayout groupeAlsoKnowsTV;
+
+    @BindView(R.id.ingredients_groupe)
+    private LinearLayout groupeIngredientsTV;
+
+    @BindView(R.id.origin_tv_groupe)
+    private LinearLayout groupeOriginTV;
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
-    private TextView textViewAlsoKnownAsTv;
-    private TextView textViewPlaceOfOriginTv;
-    private TextView textViewDescriptionTv;
-    private TextView textViewIngredientsTv;
-    private LinearLayout groupeAlsoKnowsTV;
-    private LinearLayout groupeIngredientsTV;
-    private LinearLayout groupeOriginTV;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +57,7 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         ImageView ingredientsIv = findViewById(R.id.image_iv);
-        textViewAlsoKnownAsTv = findViewById(R.id.also_known_tv);
-        textViewPlaceOfOriginTv = findViewById(R.id.origin_tv);
-        textViewDescriptionTv = findViewById(R.id.description_tv);
-        textViewIngredientsTv = findViewById(R.id.ingredients_tv);
-        groupeAlsoKnowsTV = findViewById(R.id.also_known_tv_groupe);
-        groupeIngredientsTV = findViewById(R.id.ingredients_groupe);
-        groupeOriginTV = findViewById(R.id.origin_tv_groupe);
+
         Intent intent = getIntent();
         if (intent == null) {
             closeOnError();
